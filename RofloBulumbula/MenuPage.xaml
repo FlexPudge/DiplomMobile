@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RofloBulumbula.MenuPage"
+       xmlns:local="clr-namespace:RofloBulumbula.Views">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Title="Поиск" Icon="search.png" Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}"/>
+        <ShellContent Title="Избранное" Icon="heart.png" Route="HeartPage" ContentTemplate="{DataTemplate local:HeartPage}"/>
+        <ShellContent Title="Контакты" Icon="book.png" Route="ContactsPage" ContentTemplate="{DataTemplate local:ContactsPage}"/>
+        <ShellContent Title = "Профиль"  Icon="user.png" Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}"/>
+    </TabBar>
+</Shell>
