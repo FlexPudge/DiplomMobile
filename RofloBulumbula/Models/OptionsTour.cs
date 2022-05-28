@@ -10,7 +10,5 @@ namespace RofloBulumbula
         public int Id { get; set; }
         public int? Idtour { get; set; }
         public int? Idoptions { get; set; }
-
-
     }
 }

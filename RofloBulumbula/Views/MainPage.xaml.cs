@@ -1,16 +1,14 @@
 ﻿using Newtonsoft.Json;
+using RofloBulumbula.ToolKit;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Security;
-using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -29,53 +27,59 @@ namespace RofloBulumbula.Views
                 OnPropertyChanged(); 
             } 
         }
+        private List<Tour> alltours;
         public List<Tour> AllTours
         {
-            get => tours;
+            get => alltours;
             set
             {
-                tours = value;
+                alltours = value;
                 OnPropertyChanged();
+            }
+        }
+        private int selectedSort;
+        public int SelectedSort 
+        {
+            get => selectedSort;
+            set
+            {
+                selectedSort = value;
+                OnPropertyChanged();
+                Sort();
+            }
+        }
+        private int _selectedSFilter;
+        public int SelectedFilter 
+        { 
+            get => _selectedSFilter;
+            set 
+            {
+                _selectedSFilter = value;
+               // Filter();
             }
         }
         public MainPage()
         {
             InitializeComponent();
+            //LoadData();
             this.BindingContext = this;
-            LoadData();
-            var countries = GetCity();
-            picker.ItemsSource = countries;
-            picker.SelectedIndex = 0;
+            Tours = AllTours;
         }
-        private int _selectedSFilter;
-        public int SelectedFilter { get => _selectedSFilter; set { _selectedSFilter = value; Filter(); } }
-        private void Filter()
+        private void Sort()
         {
-           /* switch (SelectedFilter)
+            if (SelectedSort == 0)
             {
-                case 0:
-                    LoadData();
-                    break;
-                case 1:
-                    Tours = AllTours.Where(s => s.DepartureCity == "Смоленск").ToList();
-                    break;
-                case 2:
-                    Tours = AllTours.Where(s => s.DepartureCity == "Самара").ToList();
-                    break;
-                case 3:
-                    Tours = AllTours.Where(s => s.DepartureCity == "Чебоксары").ToList();
-                    break;
-                case 4:
-                    Tours = AllTours.Where(s => s.DepartureCity == "Адлер").ToList();
-                    break;
-                case 5:
-                    Tours = AllTours.Where(s => s.DepartureCity == "Тюмень").ToList();
-                    break;
-                default:
-                    break;
-            }*/
+                LoadData();
+            }
+            if (SelectedSort == 1)
+            {
+                AllTours = AllTours.OrderBy(x=>x.Price).ToList();
+            }
+            if (SelectedSort == 2)
+            {
+                AllTours = AllTours.OrderBy(x=>x.Price).ToList();
+            } 
         }
-       
         private async void LoadData()
         {
             try
@@ -84,26 +88,12 @@ namespace RofloBulumbula.Views
                 var client = new HttpClient(clientHandler);
                 var response = await client.GetAsync(App.AddressHome + "Home/Tour");
                 var content = await response.Content.ReadAsStringAsync();
-                Tours = JsonConvert.DeserializeObject<List<Tour>>(content);               
+                AllTours = JsonConvert.DeserializeObject<List<Tour>>(content);               
             }
             catch 
             {
                 await DisplayAlert("Ошибка", "Сервер не отвечает", "Ок");
             }
-        }
-
-        
-        private List<string> GetCity()
-        {
-            return new List<string>
-            {
-                "Все",
-                "Смоленск",
-                "Самара",
-                "Чебоксары",
-                "Адлер",
-                "Тюмень"
-            };
         }
         private bool Cerf(HttpRequestMessage arg1, X509Certificate2 arg2, X509Chain arg3, SslPolicyErrors arg4)
         {
@@ -121,15 +111,9 @@ namespace RofloBulumbula.Views
                     Idtours = content.Id,
                     DateSale = DateTime.Now
                 };
-                var json = JsonConvert.SerializeObject(voucher);
-                var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-                var clientHandler = new HttpClientHandler { ServerCertificateCustomValidationCallback = Cerf };
-                var client = new HttpClient(clientHandler);
-                var response = await client.PostAsync(App.AddressHome + "Home/AddVoucher", stringContent);
-                var responseContent = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<Voucher>(responseContent);
+                await HttpRequest.PostAsync<Voucher>(App.AddressHome + "Home/AddVoucher",voucher);
             }
-            catch (Exception ex)
+            catch
             {
                 await DisplayAlert("Недоступно", "Перед тем как купить тур авторизируйтесь в системе, пожалуйста", "Ок");
             }

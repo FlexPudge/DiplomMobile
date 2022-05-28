@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 
-
 namespace RofloBulumbula
 {
     public partial class TypeTour

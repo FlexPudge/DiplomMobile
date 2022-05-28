@@ -4,12 +4,10 @@
              xmlns:converters="clr-namespace:RofloBulumbula.ToolKit"
              x:Class="RofloBulumbula.Views.MainPage">
     <ContentPage.Resources>
-            <ResourceDictionary>
-                <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
-            </ResourceDictionary>
-        </ContentPage.Resources>
-
-
+        <ResourceDictionary>
+            <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -17,7 +15,7 @@
             <RowDefinition  Height="auto"/>
             <RowDefinition  Height="auto"/>
         </Grid.RowDefinitions>
-
+       
         <Grid Grid.Row="0" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
@@ -25,12 +23,18 @@
                 <ColumnDefinition  Width="auto"/>
             </Grid.ColumnDefinitions>
 
-            <StackLayout  Margin="0,10,0,0">
-                <Picker x:Name="picker" SelectedIndex="{Binding SelectedFilter}" WidthRequest="150"  />
+            <StackLayout>
+                <Picker  x:Name="picker" WidthRequest="150" Title="Сортировка" SelectedIndex="{Binding SelectedSort}">
+                    <Picker.Items>
+                        <x:String>Все</x:String>
+                        <x:String>По возрастанию</x:String>
+                        <x:String>По убыванию</x:String>
+                    </Picker.Items>
+                </Picker>
             </StackLayout>
         </Grid>
 
-        <ListView Grid.Row="1" Margin="15" ItemsSource="{Binding Tours}"
+        <ListView Grid.Row="1" Margin="15" ItemsSource="{Binding AllTours}"
                       ItemSelected="ListView_ItemSelected"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True">

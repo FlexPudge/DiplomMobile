@@ -11,6 +11,7 @@ namespace RofloBulumbula
         public int? Idtours { get; set; }
         public DateTime? DateSale { get; set; }
 
-
+        public virtual Client IdclientsNavigation { get; set; }
+        public virtual Tour IdtoursNavigation { get; set; }
     }
 }

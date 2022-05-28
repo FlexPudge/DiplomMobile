@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 
 
-
 namespace RofloBulumbula
 {
     public partial class Tour
     {
-   
 
         public int Id { get; set; }
         public string Title { get; set; }
@@ -17,11 +15,17 @@ namespace RofloBulumbula
         public string Duration { get; set; }
         public int? Complexity { get; set; }
         public int? MinimumAge { get; set; }
+        public DateTime? Date { get; set; }
         public string Price { get; set; }
         public byte[] Image { get; set; }
-        public string GeneralInformation { get; set; }
-        public string HotInformation { get; set; }
-        public string AdditionalInformation { get; set; }
+        public int? IdtourInfo { get; set; }
+        public int? IdprogrammTour { get; set; }
+        public int? IdlivingTour { get; set; }
+        public virtual LivingTour IdlivingTourNavigation { get; set; }
+        public virtual ProgrammTour IdprogrammTourNavigation { get; set; }
+        public virtual InfoTour IdtourInfoNavigation { get; set; }
+        public virtual ICollection<Favorite> Favorites { get; set; }
 
+        public virtual ICollection<Voucher> Vouchers { get; set; }
     }
 }
