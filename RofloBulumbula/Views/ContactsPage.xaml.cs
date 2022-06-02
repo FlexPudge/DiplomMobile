@@ -23,22 +23,15 @@ namespace RofloBulumbula.Views
             {
                 await Browser.OpenAsync(uri);
             }
-            catch (Exception ex)
+            catch 
             {
-                // An unexpected error occured. No browser may be installed on the device.
+                await DisplayAlert("101","201","301");
             }
-        }
-        public async Task OpenRideShareAsync()
-        {
-            var supportsUri = await Launcher.CanOpenAsync("https://");
-            if (supportsUri)
-                await Launcher.OpenAsync("https://vk.com/smolensktravel");
         }
         private async void VkButton_Clicked(object sender, EventArgs e)
         {
             Uri uri = new Uri("https://vk.com/smolensktravel");
             await OpenBrowser(uri);
-            //await OpenRideShareAsync();
         }
 
         private async void WhatButton_Clicked(object sender, EventArgs e)
