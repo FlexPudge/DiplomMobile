@@ -30,7 +30,7 @@ namespace RofloBulumbula.ToolKit
             var content = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<T>(content);
         }
-        public static async Task PostAsync<T>(string address, object content)
+        public static async Task<HttpResponseMessage> PostAsync<T>(string address, object content)
         {
             var clientHandler = new HttpClientHandler { ServerCertificateCustomValidationCallback = (ao, f, s, a) => true };
             var client = new HttpClient(clientHandler);
@@ -38,6 +38,7 @@ namespace RofloBulumbula.ToolKit
             var contents = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await client.PostAsync(address, contents);
             response.EnsureSuccessStatusCode();
+            return response.EnsureSuccessStatusCode();
         }
         public static async Task<T> PutAsync<T>(string address, object content)
         {

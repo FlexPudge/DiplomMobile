@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:RofloBulumbula.ToolKit"
+             Title="Поиск туров"
              x:Class="RofloBulumbula.Views.SearchTourPage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -28,9 +29,8 @@
                 <Picker x:Name="picker" WidthRequest="150"  />
             </StackLayout>
         </Grid>
-
-        <ListView Grid.Row="1" Margin="15" ItemsSource="{Binding Tours}"
-                      
+        <ListView Grid.Row="1" Margin="15" ItemsSource="{Binding Tours}"     
+                  ItemSelected="ListView_ItemSelected"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True">
             <ListView.ItemTemplate>
@@ -57,7 +57,7 @@
                                     </MultiBinding>
                                 </Label.Text>
                             </Label>
-                            <Button Text="Купить"  x:Name="BuyButton" Margin="0,10,0,0"  Padding="10" />
+                            <Button Text="Купить" Clicked="BuyButton_Clicked"  x:Name="BuyButton" Margin="0,10,0,0"  Padding="10" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:RofloBulumbula.ToolKit"
              x:Class="RofloBulumbula.Views.HeartPage"
+             Title="Избранное"
              Appearing="ContentPage_Appearing"
              >
     <ContentPage.Resources>
@@ -12,7 +13,7 @@
     </ContentPage.Resources>
 
     <ListView Grid.Row="1" Margin="15" ItemsSource="{Binding Favorites}"
-                     
+                      ItemSelected="ListView_ItemSelected"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True">
         <ListView.ItemTemplate>

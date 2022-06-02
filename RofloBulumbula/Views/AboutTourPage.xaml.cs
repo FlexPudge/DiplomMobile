@@ -18,7 +18,6 @@ namespace RofloBulumbula.Views
 
         private string lvl;
         public string Lvl { get => lvl;set { lvl = value;OnPropertyChanged();  } }
-
         public AboutTourPage(Tour selectedTour)
         {
             InitializeComponent();
@@ -26,6 +25,7 @@ namespace RofloBulumbula.Views
             this.BindingContext = Tours;
             ComplextySwitch();
         }
+
         private  void ComplextySwitch()
         {
             switch (Tours.Complexity)
@@ -61,7 +61,11 @@ namespace RofloBulumbula.Views
 
                 };
                 string address = App.AddressHome + "Home/AddFavorite";
-                await HttpRequest.PostAsync<Favorite>(address, favorite);
+                var a = await HttpRequest.PostAsync<Favorite>(address, favorite);
+                if (a.IsSuccessStatusCode == true)
+                {
+                    await DisplayAlert("Уведомление", "Тур куплен!", "Ок");
+                }
             }
             catch
             {
@@ -74,9 +78,25 @@ namespace RofloBulumbula.Views
             await Navigation.PushAsync(new MoreTourPage(Tours));
         }
 
-        private void BuyButton_Clicked(object sender, EventArgs e)
+        private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-
+            //var content = ((Button)sender).BindingContext as Tour;
+            var idClient = App.IDCLient;
+            var voucher = new Voucher
+            {
+                Idclients = idClient,
+                Idtours = Tours.Id,
+                DateSale = DateTime.Now
+            };
+            var a = await HttpRequest.PostAsync<Voucher>(App.AddressHome + "Home/AddVoucher", voucher);
+            if (a.StatusCode == System.Net.HttpStatusCode.NoContent)
+            {
+                await DisplayAlert("Ошибка", "Перед тем как купить тур авторизируйтесь", "Ок");
+            }
+            else if (a.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                await DisplayAlert("Уведомление", "Вы купили, посмотреть информацию о покупке можно в профиле!", "Ок");
+            }
         }
     }
 }

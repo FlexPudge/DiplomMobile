@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RofloBulumbula.ToolKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,13 +57,41 @@ namespace RofloBulumbula.Views
         {
             return true;
         }
-        private void BuyButton_Clicked(object sender, EventArgs e)
+        private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-
+            try
+            {
+                var content = ((Button)sender).BindingContext as Tour;
+                var idClient = App.IDCLient;
+                var voucher = new Voucher
+                {
+                    Idclients = idClient,
+                    Idtours = content.Id,
+                    DateSale = DateTime.Now
+                };
+                var a = await HttpRequest.PostAsync<Voucher>(App.AddressHome + "Home/AddVoucher", voucher);
+                if (a.IsSuccessStatusCode == true)
+                {
+                    await DisplayAlert("Уведомление", "Тур куплен!", "Ок");
+                }
+            }
+            catch
+            {
+                await DisplayAlert("Недоступно", "Перед тем как купить тур авторизируйтесь в системе, пожалуйста", "Ок");
+            }
         }
         private async void ContentPage_Appearing(object sender, EventArgs e)
         {
             await Sort();
+        }
+
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Favorite selectedFavoritetour = e.SelectedItem as Favorite;
+            if (selectedFavoritetour != null)
+            {
+                await Navigation.PushAsync(new AboutHeartPage(selectedFavoritetour));
+            }
         }
     }
 }

@@ -41,5 +41,5 @@ C:\Users\MAS_1_16\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0
 C:\Users\MAS_1_16\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\SignInPage.xaml.g.cs
 C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\SearchPage.xaml.g.cs
 C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\SearchTourPage.xaml.g.cs
-C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\RofloBulumbula.csproj.AssemblyReference.cache
 C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\MoreTourPage.xaml.g.cs
+C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\AboutHeartPage.xaml.g.cs

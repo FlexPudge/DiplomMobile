@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:RofloBulumbula.ToolKit"
+             Title="Туры"
              x:Class="RofloBulumbula.Views.MainPage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -9,6 +10,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>

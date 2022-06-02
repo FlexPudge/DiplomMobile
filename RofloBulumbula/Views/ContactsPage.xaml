@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="О нас"
              x:Class="RofloBulumbula.Views.ContactsPage">
     <ContentPage.Content>
         <Grid>
@@ -18,7 +19,7 @@
                    Text="Поможем выбрать тур и решить вопросы во время путешествия,а также ответим на вопросы по работе приложения"
                    TextColor="Black" FontSize="20"  HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin="10"  />
 
-            <Button Grid.Row="2" Text="Позвонить" VerticalOptions="CenterAndExpand" Margin="20,0,20,0"
+            <Button Grid.Row="2" Text="Позвонить" Clicked="Button_Clicked" VerticalOptions="CenterAndExpand" Margin="20,0,20,0"
                     BackgroundColor="Transparent" BorderColor="#2196F3" BorderWidth="1" TextColor="#2196F3"/>
 
             <Label  Grid.Row="3"
@@ -26,9 +27,9 @@
                    TextColor="Black" FontSize="20"  HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin="10"  />
 
             <StackLayout Grid.Row="4" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
-                <Image Source="vk.png" />
-                <Image Source="whatsapp.png" />
-                <Image Source="viber.png" />
+                <ImageButton Source="vk.png" x:Name="VkButton" BackgroundColor="Transparent" Clicked="VkButton_Clicked" />
+                <ImageButton Source="whatsapp.png" x:Name="WhatButton" BackgroundColor="Transparent" Clicked="WhatButton_Clicked"  />
+                <ImageButton Source="viber.png" x:Name="ViberButton" BackgroundColor="Transparent"  Clicked="ViberButton_Clicked" />
             </StackLayout>
 
 
