@@ -12,13 +12,22 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ListView Grid.Row="1" Margin="15" ItemsSource="{Binding Favorites}"
+    <ListView Grid.Row="1" Margin="15" x:Name="lvFavorite" ItemsSource="{Binding Favorites}"
                       ItemSelected="ListView_ItemSelected"
                       VerticalOptions="FillAndExpand"
+              IsPullToRefreshEnabled="True"
                       HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
+                    <ViewCell.ContextActions>
+                        <MenuItem Clicked="OnMore"
+                        
+                             Text="More" />
+                        <MenuItem Clicked="OnDelete"
+                      Text="Delete" IsDestructive="True" />
+                    </ViewCell.ContextActions>
+                    
                     <StackLayout Padding="10" >
                         <Image Source="{Binding IdtoursNavigation.Image, Converter={StaticResource ByteArrayToImage}}" 
                                    Aspect="AspectFill"
@@ -40,7 +49,8 @@
                                 </MultiBinding>
                             </Label.Text>
                         </Label>
-                        <Button Text="Купить"  x:Name="BuyButton" Margin="0,10,0,0" Clicked="BuyButton_Clicked" Padding="10" />
+                        <Button Text="Забронировать"  x:Name="BuyButton" Margin="0,10,0,0" Clicked="BuyButton_Clicked" Padding="10" />
+                        <Button Text="Удалить"  x:Name="DeleteButton" Margin="0,10,0,0" Clicked="DeleteButton_Clicked" Padding="10" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

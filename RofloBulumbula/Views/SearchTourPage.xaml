@@ -57,7 +57,7 @@
                                     </MultiBinding>
                                 </Label.Text>
                             </Label>
-                            <Button Text="Купить" Clicked="BuyButton_Clicked"  x:Name="BuyButton" Margin="0,10,0,0"  Padding="10" />
+                            <Button Text="Забронировать" Clicked="BuyButton_Clicked"  x:Name="BuyButton" Margin="0,10,0,0"  Padding="10" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

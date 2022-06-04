@@ -25,27 +25,27 @@
                     </Grid.RowDefinitions>
 
                     <StackLayout >
-                        <Button Text="Мои заказы" BackgroundColor="Transparent" TextColor="Black"
+                        <Button Text="Мои заказы" x:Name="OrdersButton" BackgroundColor="Transparent" Clicked="OrdersButton_Clicked" TextColor="Black"
                                FontSize="18" Margin="50,0" FontAttributes="Bold"/>
                         <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
                       Y2="20" StrokeLineCap="Round" Stroke="black"
-                      StrokeThickness="2" />
+                      StrokeThickness="1" />
                     </StackLayout>
 
                     <StackLayout Grid.Row="1">
+                        <Button Text="Архив заказов" Clicked="Button_Clicked" BackgroundColor="Transparent" TextColor="Black"
+                               FontSize="18" Margin="50,0" FontAttributes="Bold"/>
+                        <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="1" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2" >
                         <Button Text="Документы" BackgroundColor="Transparent" TextColor="Black"
                                FontSize="18" Margin="50,0" FontAttributes="Bold"/>
                         <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
                       Y2="20" StrokeLineCap="Round" Stroke="black"
-                      StrokeThickness="2" />
-                    </StackLayout>
-
-                    <StackLayout Grid.Row="2" >
-                        <Button Text="Настройки" BackgroundColor="Transparent" TextColor="Black"
-                               FontSize="18" Margin="50,0" FontAttributes="Bold"/>
-                        <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
-                      Y2="20" StrokeLineCap="Round" Stroke="black"
-                      StrokeThickness="2" />
+                      StrokeThickness="1" />
                     </StackLayout>
 
                 </Grid>

@@ -6,6 +6,12 @@ namespace RofloBulumbula
 {
     public partial class Tour
     {
+        public Tour()
+        {
+            AboutPhotos = new HashSet<AboutPhoto>();
+            Favorites = new HashSet<Favorite>();
+            Vouchers = new HashSet<Voucher>();
+        }
 
         public int Id { get; set; }
         public string Title { get; set; }
@@ -21,9 +27,13 @@ namespace RofloBulumbula
         public int? IdtourInfo { get; set; }
         public int? IdprogrammTour { get; set; }
         public int? IdlivingTour { get; set; }
+
         public virtual LivingTour IdlivingTourNavigation { get; set; }
         public virtual ProgrammTour IdprogrammTourNavigation { get; set; }
         public virtual InfoTour IdtourInfoNavigation { get; set; }
+
+        public virtual ICollection<AboutPhoto> AboutPhotos { get; set; }
+
         public virtual ICollection<Favorite> Favorites { get; set; }
 
         public virtual ICollection<Voucher> Vouchers { get; set; }

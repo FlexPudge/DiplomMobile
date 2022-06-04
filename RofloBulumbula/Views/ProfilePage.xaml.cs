@@ -47,15 +47,22 @@ namespace RofloBulumbula.Views
                 OnPropertyChanged();
             } 
         }
-
         private async void SignInButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SignInPage() );
         }
-
         private  void SignUpButton_Clicked(object sender, EventArgs e)
         {
             //await Navigation.PushAsync(new );
+        }
+        private async void OrdersButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new OrdersPage());
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HistoryOrdersPage());
         }
     }
 }

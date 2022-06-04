@@ -6,7 +6,10 @@ namespace RofloBulumbula
 {
     public partial class ProgrammTour
     {
-   
+        public ProgrammTour()
+        {
+            Tours = new HashSet<Tour>();
+        }
 
         public int Id { get; set; }
         public string Description { get; set; }

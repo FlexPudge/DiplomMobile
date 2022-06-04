@@ -30,7 +30,15 @@ namespace RofloBulumbula.Views
         public HeartPage()
         {
             InitializeComponent();
-            this.BindingContext = this; 
+            this.BindingContext = this;
+            lvFavorite.RefreshCommand = new Command(() => {   
+                RefreshData();
+                lvFavorite.IsRefreshing = false;
+            });
+        }
+        public async void RefreshData()
+        {
+           await Sort();
         }
         private async Task Sort()
         {
@@ -85,13 +93,32 @@ namespace RofloBulumbula.Views
             await Sort();
         }
 
-        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private  void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Favorite selectedFavoritetour = e.SelectedItem as Favorite;
+            /*Favorite selectedFavoritetour = e.SelectedItem as Favorite;
             if (selectedFavoritetour != null)
             {
                 await Navigation.PushAsync(new AboutHeartPage(selectedFavoritetour));
-            }
+            }*/
+        }
+        private void OnMore(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            DisplayAlert("More Context Action", mi.CommandParameter + " more context action", "OK");
+        }
+
+        private void OnDelete(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
+        }
+
+        private async void DeleteButton_Clicked(object sender, EventArgs e)
+        {
+            var content = ((Button)sender).BindingContext as Favorite;
+            //var deleteFavorit = Favorites.Find(x => x.Id == content.Id);
+            var resp =  await HttpRequest.PostAsyncNotCode<Favorite>(App.AddressHome + "Home/DeleteFavorite", content);
+            Favorites = resp;
         }
     }
 }

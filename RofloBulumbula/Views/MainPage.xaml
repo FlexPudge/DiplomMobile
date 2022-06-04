@@ -52,6 +52,13 @@
                             <Label Text="{Binding TypeTour}" TextColor="Black" FontSize="18" HorizontalTextAlignment="Center" />
                             <Label  TextColor="Black" FontSize="18" HorizontalTextAlignment="Center" >
                                 <Label.Text>
+                                    <MultiBinding StringFormat="Начало тура {0:dd.MM.yyyy}" >
+                                        <Binding Path="Date"  />
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
+                            <Label  TextColor="Black" FontSize="18" HorizontalTextAlignment="Center" >
+                                <Label.Text>
                                     <MultiBinding StringFormat="Продолжительность {0} дней" >
                                         <Binding Path="Duration"  />
                                     </MultiBinding>
@@ -64,7 +71,10 @@
                                     </MultiBinding>
                                 </Label.Text>
                             </Label>
-                            <Button Text="Купить"  x:Name="BuyButton" Margin="0,10,0,0" Clicked="BuyButton_Clicked" Padding="10" />
+                            <Button Text="Забронировать"  x:Name="BuyButton" Margin="0,10,0,0" Clicked="BuyButton_Clicked" Padding="10" />
+                            <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="2" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

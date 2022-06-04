@@ -23,7 +23,7 @@
                 </StackLayout>
 
                 <StackLayout Grid.Row="1">
-                    <Frame BorderColor="Black">
+                    <Frame BorderColor="Black" Margin="10,0,10,0">
                         <Label  TextColor="Black" FontSize="18" >
                             <Label.Text>
                                 <MultiBinding StringFormat="{}День 1
@@ -35,7 +35,7 @@
                         </Label>
                     </Frame>
 
-                    <Frame BorderColor="Black">
+                    <Frame BorderColor="Black" Margin="10,0,10,0">
                         <Label  TextColor="Black" FontSize="18" >
                             <Label.Text>
                                 <MultiBinding StringFormat="{}День 2
@@ -47,7 +47,7 @@
                         </Label>
                     </Frame>
 
-                    <Frame BorderColor="Black">
+                    <Frame BorderColor="Black" Margin="10,0,10,0">
                         <Label  TextColor="Black" FontSize="18" >
                             <Label.Text>
                                 <MultiBinding StringFormat="{}День 3
@@ -59,7 +59,7 @@
                         </Label>
                     </Frame>
 
-                    <Frame BorderColor="Black" x:Name="FrameDay4">
+                    <Frame BorderColor="Black" x:Name="FrameDay4" Margin="10,0,10,0">
                         <Label  TextColor="Black" FontSize="18" >
                             <Label.Text>
                                 <MultiBinding StringFormat="{}День 4
@@ -71,7 +71,7 @@
                         </Label>
                     </Frame>
 
-                    <Frame BorderColor="Black" x:Name="FrameDay5">
+                    <Frame BorderColor="Black" x:Name="FrameDay5" Margin="10,0,10,0">
                         <Label  TextColor="Black" FontSize="18" >
                             <Label.Text>
                                 <MultiBinding StringFormat="{}День 5
@@ -83,7 +83,7 @@
                         </Label>
                     </Frame>
 
-                    <Frame BorderColor="Black" x:Name="FrameDay6">
+                    <Frame BorderColor="Black" x:Name="FrameDay6" Margin="10,0,10,0">
                         <Label  TextColor="Black" FontSize="18" >
                             <Label.Text>
                                 <MultiBinding StringFormat="{}День 6
@@ -95,7 +95,7 @@
                         </Label>
                     </Frame>
 
-                    <Frame BorderColor="Black" x:Name="FrameDay7">
+                    <Frame BorderColor="Black" x:Name="FrameDay7" Margin="10,0,10,0">
                         <Label  TextColor="Black" FontSize="18" >
                             <Label.Text>
                                 <MultiBinding StringFormat="{}День 7
@@ -117,16 +117,6 @@
                    HorizontalOptions="CenterAndExpand"
                    Margin="10"/>
                 </StackLayout>
-                
-              
-
-               
-
-               
-
-
-
-
             </Grid>
         </ScrollView>
     </ContentPage.Content>

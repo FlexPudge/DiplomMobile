@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GsVLTwlYiNz3yuxpwLFQIbBuJ4lRa/wHLkBkIqO5+PFzJm3M3bQjsdcqhiD8otphuuJoa6PSgNp7ZHEY+IJJqA==",
+  "dgSpecHash": "6Ejz5TV02E4vLGEr7rxPvFBSrbIlh6u/NBp54q4+f/HGNgYeZmT4wTF7a+JaCIDn4Cm1Rft4bp4VYOYkz1aktg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Misha\\Desktop\\RofloBulumbula\\RofloBulumbula\\RofloBulumbula.csproj",
   "expectedPackageFiles": [
@@ -8,8 +8,8 @@
     "C:\\Users\\Misha\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\Misha\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Misha\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\Misha\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Users\\Misha\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "C:\\Users\\Misha\\.nuget\\packages\\xamarin.essentials\\1.7.3\\xamarin.essentials.1.7.3.nupkg.sha512",
+    "C:\\Users\\Misha\\.nuget\\packages\\xamarin.forms\\5.0.0.2401\\xamarin.forms.5.0.0.2401.nupkg.sha512"
   ],
   "logs": []
 }

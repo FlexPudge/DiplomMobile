@@ -43,4 +43,6 @@ C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Vi
 C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\SearchTourPage.xaml.g.cs
 C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\MoreTourPage.xaml.g.cs
 C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\AboutHeartPage.xaml.g.cs
+C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\OrdersPage.xaml.g.cs
+C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\HistoryOrdersPage.xaml.g.cs
 C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\RofloBulumbula.csproj.AssemblyReference.cache

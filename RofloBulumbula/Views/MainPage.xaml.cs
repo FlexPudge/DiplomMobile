@@ -100,7 +100,6 @@ namespace RofloBulumbula.Views
         }
         private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-          
                 var content = ((Button)sender).BindingContext as Tour;
                 var idClient = App.IDCLient;
                 var voucher = new Voucher
@@ -112,14 +111,12 @@ namespace RofloBulumbula.Views
                var a = await HttpRequest.PostAsync<Voucher>(App.AddressHome + "Home/AddVoucher",voucher);
             if (a.StatusCode == System.Net.HttpStatusCode.NoContent)
             {
-                await DisplayAlert("Ошибка","Перед тем как купить тур авторизируйтесь","Ок");
+                await DisplayAlert("Ошибка","Перед тем как забронировать тур авторизируйтесь","Ок");
             }
             else if (a.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                await DisplayAlert("Уведомление", "Вы купили, посмотреть информацию о покупке можно в профиле!", "Ок");
+                await DisplayAlert("Уведомление", "Вы забронировали тур, посмотреть информацию можно в профиле в разделе заказы!", "Ок");
             }
-
-
         }
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

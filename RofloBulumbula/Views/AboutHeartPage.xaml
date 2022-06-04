@@ -78,7 +78,7 @@
 
         <StackLayout Grid.Row="3">
             <Button Text="Подробнее" x:Name="AboutButton" Margin="50,10,50,0"  Padding="10" />
-            <Button Text="Купить"    x:Name="BuyButton" Margin="50,10,50,0" Clicked="BuyButton_Clicked" Padding="10" />
+            <Button Text="Забронировать тур" x:Name="BuyButton" Margin="50,10,50,0" Clicked="BuyButton_Clicked" Padding="10" />
         </StackLayout>
 
 
