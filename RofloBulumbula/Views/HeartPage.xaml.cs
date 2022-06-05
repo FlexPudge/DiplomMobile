@@ -80,12 +80,12 @@ namespace RofloBulumbula.Views
                 var a = await HttpRequest.PostAsync<Voucher>(App.AddressHome + "Home/AddVoucher", voucher);
                 if (a.IsSuccessStatusCode == true)
                 {
-                    await DisplayAlert("Уведомление", "Тур куплен!", "Ок");
+                    await DisplayAlert("Уведомление", "Вы забронировали тур!", "Ок");
                 }
             }
             catch
             {
-                await DisplayAlert("Недоступно", "Перед тем как купить тур авторизируйтесь в системе, пожалуйста", "Ок");
+                await DisplayAlert("Недоступно", "Перед тем как забронировать тур авторизируйтесь в системе, пожалуйста", "Ок");
             }
         }
         private async void ContentPage_Appearing(object sender, EventArgs e)
@@ -113,11 +113,19 @@ namespace RofloBulumbula.Views
             DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
         }
 
-        private async void DeleteButton_Clicked(object sender, EventArgs e)
+       /* private async void DeleteButton_Clicked(object sender, EventArgs e)
         {
             var content = ((Button)sender).BindingContext as Favorite;
             //var deleteFavorit = Favorites.Find(x => x.Id == content.Id);
-            var resp =  await HttpRequest.PostAsyncNotCode<Favorite>(App.AddressHome + "Home/DeleteFavorite", content);
+            var resp = await HttpRequest.PostAsyncNotCode<Favorite>(App.AddressHome + "Home/DeleteFavorite", content);
+            Favorites = resp;
+        }*/
+
+        private async void OnDeleteSwipeItemInvoked(object sender, EventArgs e)
+        {
+            var content = ((MenuItem)sender).BindingContext as Favorite;
+            //var deleteFavorit = Favorites.Find(x => x.Id == content.Id);
+            var resp = await HttpRequest.PostAsyncNotCode<Favorite>(App.AddressHome + "Home/DeleteFavorite", content);
             Favorites = resp;
         }
     }

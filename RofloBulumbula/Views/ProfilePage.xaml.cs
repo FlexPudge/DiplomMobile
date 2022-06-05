@@ -64,5 +64,10 @@ namespace RofloBulumbula.Views
         {
             await Navigation.PushAsync(new HistoryOrdersPage());
         }
+
+        private async void DocumentButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DocumentsPage(Client));
+        }
     }
 }

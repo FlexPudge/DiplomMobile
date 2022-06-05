@@ -25,7 +25,7 @@
                     </Grid.RowDefinitions>
 
                     <StackLayout >
-                        <Button Text="Мои заказы" x:Name="OrdersButton" BackgroundColor="Transparent" Clicked="OrdersButton_Clicked" TextColor="Black"
+                        <Button Text="Документы" x:Name="DocumentButton" Clicked="DocumentButton_Clicked" BackgroundColor="Transparent" TextColor="Black"
                                FontSize="18" Margin="50,0" FontAttributes="Bold"/>
                         <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
                       Y2="20" StrokeLineCap="Round" Stroke="black"
@@ -41,7 +41,7 @@
                     </StackLayout>
 
                     <StackLayout Grid.Row="2" >
-                        <Button Text="Документы" BackgroundColor="Transparent" TextColor="Black"
+                        <Button Text="Мои заказы" x:Name="OrdersButton" BackgroundColor="Transparent" Clicked="OrdersButton_Clicked" TextColor="Black"
                                FontSize="18" Margin="50,0" FontAttributes="Bold"/>
                         <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
                       Y2="20" StrokeLineCap="Round" Stroke="black"

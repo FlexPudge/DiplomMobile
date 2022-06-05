@@ -17,7 +17,7 @@ namespace RofloBulumbula
         public string GeneralInformation { get; set; }
         public string HotInformation { get; set; }
         public string AdditionalInformation { get; set; }
-  
+
         public virtual ICollection<Tour> Tours { get; set; }
     }
 }

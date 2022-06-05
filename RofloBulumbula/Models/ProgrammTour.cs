@@ -24,6 +24,7 @@ namespace RofloBulumbula
         public string Day9 { get; set; }
         public string Day10 { get; set; }
 
+
         public virtual ICollection<Tour> Tours { get; set; }
     }
 }

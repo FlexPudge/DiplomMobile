@@ -31,11 +31,11 @@ namespace RofloBulumbula
         public virtual LivingTour IdlivingTourNavigation { get; set; }
         public virtual ProgrammTour IdprogrammTourNavigation { get; set; }
         public virtual InfoTour IdtourInfoNavigation { get; set; }
-
+ 
         public virtual ICollection<AboutPhoto> AboutPhotos { get; set; }
-
+   
         public virtual ICollection<Favorite> Favorites { get; set; }
-
+    
         public virtual ICollection<Voucher> Vouchers { get; set; }
     }
 }
