@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Регистрация"
+             x:Class="RofloBulumbula.Views.SignUpPage">
+    <ContentPage.Content>
+        <ScrollView>
+            
+       
+        <StackLayout >
+            <Entry x:Name="FIOTextBox" 
+                   Placeholder="Фамилия Имя Отчество"
+                   Margin="10"
+                   FontSize="22"/>
+            <Entry x:Name="PhoneTextBox" 
+                   Placeholder="Номер телефона"
+                   Margin="10"
+                   FontSize="22"/>
+            <Entry x:Name="EmailTextBox" 
+                   Placeholder="Email"
+                   Margin="10"
+                   FontSize="22"/>
+            <Entry x:Name="GenderTextBox" 
+                   Placeholder="Пол"
+                   Margin="10"
+                   FontSize="22"/>
+            <Entry x:Name="LoginTextBox" 
+                   Placeholder="Придумайте Login"
+                   Margin="10"
+                   FontSize="22"/>
+            <Entry x:Name="PasswordTextBox" 
+                   Placeholder="Придумайете Пароль"
+                   Margin="10"
+                   FontSize="22"/>
+
+            <Button Text="Зарегистироваться" Margin="50,10,50,10" Clicked="Button_Clicked"/>
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

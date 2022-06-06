@@ -51,9 +51,9 @@ namespace RofloBulumbula.Views
         {
             await Navigation.PushAsync(new SignInPage() );
         }
-        private  void SignUpButton_Clicked(object sender, EventArgs e)
+        private async void SignUpButton_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new );
+            await Navigation.PushAsync(new SignUpPage());
         }
         private async void OrdersButton_Clicked(object sender, EventArgs e)
         {

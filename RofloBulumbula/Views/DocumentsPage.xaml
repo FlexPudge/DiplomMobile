@@ -4,8 +4,72 @@
              x:Class="RofloBulumbula.Views.DocumentsPage"
              Title="Моид документы">
     <ContentPage.Content>
-        <StackLayout>
-           
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout>
+                <Label Text="Паспорт" TextColor="Black" FontSize="22" HorizontalTextAlignment="Center" 
+                       Margin="10"/>
+                <Label  TextColor="Black" FontSize="18" HorizontalTextAlignment="Center"
+                         VerticalTextAlignment="Center" FontAttributes="Bold" >
+                    <Label.Text>
+                        <MultiBinding StringFormat="{} {0} {1} {2}">
+                            <Binding Path="Pass[0].Idpassport1Navigation.LastName" />
+                            <Binding Path="Pass[0].Idpassport1Navigation.Name" />
+                            <Binding Path="Pass[0].Idpassport1Navigation.MiddleName" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
+
+                <Label  TextColor="Black" FontSize="18" HorizontalTextAlignment="Center"
+                         VerticalTextAlignment="Center" >
+                    <Label.Text>
+                        <MultiBinding StringFormat="{} {0} / действителен до {1:dd.MM.yyyy}">
+                            <Binding Path="Pass[0].Idpassport1Navigation.Number" />
+                            <Binding Path="Pass[0].Idpassport1Navigation.DateOfIssue" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
+                <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="2" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Margin="0,20">
+                <Label Text="ЗагранПаспорт" TextColor="Black" FontSize="22" HorizontalTextAlignment="Center" 
+                       />
+                <Label  TextColor="Black" FontSize="18" HorizontalTextAlignment="Center"
+                         VerticalTextAlignment="Center" FontAttributes="Bold" >
+                    <Label.Text>
+                        <MultiBinding StringFormat="{} {0} {1}">
+                            <Binding Path="Pass[0].IdzagranPassportNavigation.LastName" />
+                            <Binding Path="Pass[0].IdzagranPassportNavigation.Name" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
+
+                <Label  TextColor="Black" FontSize="18" HorizontalTextAlignment="Center"
+                         VerticalTextAlignment="Center" >
+                    <Label.Text>
+                        <MultiBinding StringFormat="{} {0} / действителен до {1:dd.MM.yyyy}">
+                            <Binding Path="Pass[0].IdzagranPassportNavigation.Number" />
+                            <Binding Path="Pass[0].Idpassport1Navigation.DateOfIssue" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
+                <Label Text="{Binding Pass[0].IdzagranPassportNavigation.Citizenship}" TextColor="Black" FontSize="18" HorizontalTextAlignment="Center"
+                         VerticalTextAlignment="Center" />
+                <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="2" />
+            </StackLayout>
+
+
+
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

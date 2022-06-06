@@ -47,3 +47,4 @@ C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Vi
 C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\HistoryOrdersPage.xaml.g.cs
 C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\RofloBulumbula.csproj.AssemblyReference.cache
 C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\DocumentsPage.xaml.g.cs
+C:\Users\Misha\Desktop\RofloBulumbula\RofloBulumbula\obj\Debug\netstandard2.0\Views\SignUpPage.xaml.g.cs

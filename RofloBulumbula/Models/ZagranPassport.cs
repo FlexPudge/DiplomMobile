@@ -19,8 +19,6 @@ namespace RofloBulumbula
         public string Citizenship { get; set; }
         public string Number { get; set; }
         public string Srok { get; set; }
-
-
         public virtual ICollection<Idpassport> Idpassports { get; set; }
     }
 }
