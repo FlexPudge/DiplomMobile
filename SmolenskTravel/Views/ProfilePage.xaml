@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Профиль"
+             x:Class="SmolenskTravel.Views.ProfilePage">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout x:Name="NonAuth" Orientation="Vertical" VerticalOptions="Center">
+                <Button x:Name="SignInButton" Clicked="SignInButton_Clicked" Text="Войти" FontSize="Body" Margin="50,0,50,0" />
+                <Button x:Name="SignUpButton" Clicked="SignUpButton_Clicked" Text="Зарегистрироваться" FontSize="Body" Margin="50,20,50,0"  />
+            </StackLayout>
+            <StackLayout x:Name="Aut" Orientation="Vertical">
+                <Image Source="user.png" WidthRequest="100" Margin="0,10"/>
+                <Label Text="{Binding Client.Fio}" TextColor="Black" HorizontalOptions="CenterAndExpand"
+                     FontSize="20" Margin="10"  />
+                <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="2" />
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout >
+                        <Button Text="Документы" x:Name="DocumentButton" Clicked="DocumentButton_Clicked" BackgroundColor="Transparent" TextColor="Black"
+                               FontSize="18" Margin="50,0" FontAttributes="Bold"/>
+                        <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="1" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1">
+                        <Button Text="Архив заказов" Clicked="Button_Clicked" BackgroundColor="Transparent" TextColor="Black"
+                               FontSize="18" Margin="50,0" FontAttributes="Bold"/>
+                        <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="1" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2" >
+                        <Button Text="Мои заказы" x:Name="OrdersButton" BackgroundColor="Transparent" Clicked="OrdersButton_Clicked" TextColor="Black"
+                               FontSize="18" Margin="50,0" FontAttributes="Bold"/>
+                        <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="1" />
+                    </StackLayout>
+
+                </Grid>
+
+            </StackLayout>
+            
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

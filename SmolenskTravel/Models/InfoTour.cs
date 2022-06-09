@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+
+
+
+
+namespace SmolenskTravel
+{
+    public partial class InfoTour
+    {
+        public InfoTour()
+        {
+            Tours = new HashSet<Tour>();
+        }
+
+        public int Id { get; set; }
+        public string GeneralInformation { get; set; }
+        public string HotInformation { get; set; }
+        public string AdditionalInformation { get; set; }
+
+        public virtual ICollection<Tour> Tours { get; set; }
+    }
+}

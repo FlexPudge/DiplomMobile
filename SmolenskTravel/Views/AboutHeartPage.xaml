@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:SmolenskTravel.ToolKit"
+             Title="Информация о туре"
+             x:Class="SmolenskTravel.Views.AboutHeartPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid >
+                <Image Source="{Binding SelectedFavoritetour.IdtoursNavigation.Image, Converter={StaticResource ByteArrayToImage}}" 
+                    Aspect="AspectFill"
+                    Margin="5"/>
+        </Grid>
+
+        <StackLayout Orientation="Vertical" Grid.Row="1">
+                <Label Text="{Binding SelectedFavoritetour.IdtoursNavigation.Title}" TextColor="Black" FontSize="22" 
+                       FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,10"/>
+
+                <Label Text="{Binding SelectedFavoritetour.IdtoursNavigation.Location}" TextColor="Black" FontSize="18" 
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10"/>
+
+            <Label  TextColor="Black" FontSize="18" 
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10" >
+                <Label.Text>
+                    <MultiBinding StringFormat="{}Возраст от {0} лет">
+                        <Binding Path="MinimumAge" />
+                    </MultiBinding>
+                </Label.Text>
+            </Label>
+
+            <Label x:Name="lvlLabel" TextColor="Black" FontSize="18" 
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10" />
+            <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="2" />
+                <Label Text="{Binding SelectedFavoritetour.IdtoursNavigation.Description}" TextColor="Black" FontSize="18" 
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10"/>
+            <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="2" />
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" Grid.Row="2">
+            <Label Text="Что вас ожидает" TextColor="Black" FontSize="22" 
+                       FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,10"/>
+
+            <Label Text="{Binding IdtourInfoNavigation.GeneralInformation}" TextColor="Black" FontSize="18" 
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10"/>
+
+            <Frame CornerRadius="10" BorderColor="Black" Margin="10">
+                <Label Text="{Binding IdtourInfoNavigation.HotInformation}" TextColor="Black" FontSize="18" 
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="10"/>
+            </Frame>
+
+        </StackLayout>
+
+        <StackLayout Grid.Row="3">
+            <Button Text="Подробнее" x:Name="AboutButton" Margin="50,10,50,0"  Padding="10" />
+            <Button Text="Забронировать тур" x:Name="BuyButton" Margin="50,10,50,0" Clicked="BuyButton_Clicked" Padding="10" />
+        </StackLayout>
+
+
+
+    </Grid>
+    </ScrollView>
+
+</ContentPage>

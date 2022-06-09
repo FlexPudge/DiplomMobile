@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmolenskTravel", "SmolenskTravel\SmolenskTravel.csproj", "{03705CDC-BC4F-47D6-B796-D48DF516B773}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmolenskTravel.Android", "SmolenskTravel.Android\SmolenskTravel.Android.csproj", "{09B8B80B-283D-493B-98BE-7B4DD809FE05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03705CDC-BC4F-47D6-B796-D48DF516B773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03705CDC-BC4F-47D6-B796-D48DF516B773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03705CDC-BC4F-47D6-B796-D48DF516B773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03705CDC-BC4F-47D6-B796-D48DF516B773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09B8B80B-283D-493B-98BE-7B4DD809FE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B8B80B-283D-493B-98BE-7B4DD809FE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B8B80B-283D-493B-98BE-7B4DD809FE05}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{09B8B80B-283D-493B-98BE-7B4DD809FE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B8B80B-283D-493B-98BE-7B4DD809FE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09B8B80B-283D-493B-98BE-7B4DD809FE05}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0038B878-61DB-400C-83A9-7D7C4305A581}
+	EndGlobalSection
+EndGlobal
