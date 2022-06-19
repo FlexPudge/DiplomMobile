@@ -35,16 +35,6 @@ namespace SmolenskTravel.Views
                 OnPropertyChanged();
             }
         }
-        private Tour selectedDate;
-        public Tour SelectedDate
-        {
-            get => selectedDate;
-            set
-            {
-                selectedDate = value;
-                OnPropertyChanged();
-            }
-        }
         public SearchPage()
         {
             InitializeComponent();
@@ -56,34 +46,69 @@ namespace SmolenskTravel.Views
             Tours = AllTours;
             try
             {
-                string city = cityP.Items[cityP.SelectedIndex];
-                string type = typeP.Items[typeP.SelectedIndex];
-                var date = SelectedDate.Date;
-               /* if (city != null && type != null && date != null)
+                try
                 {
-                Tours = Tours.Where(x => x.Location == city && x.Date == date && x.TypeTour == type).ToList();
+                    string city = cityP.Items[cityP.SelectedIndex];
+                    if (city != null)
+                    {
+                        Tours = Tours.Where(x => x.Location == city).ToList();
+                        await Navigation.PushAsync(new SearchTourPage(Tours));
+                        typeP.SelectedIndex = -1;
+                        cityP.SelectedIndex = -1;
+                    }
+                    if (Tours.Count == 0)
+                    {
+                        await DisplayAlert("Уведомление", "Поиск не дал результатов. Попробуйте поискать по другим параматерам", "Ок");
+                    }
                 }
-                if (city != null || type != null || date != null)
-                {
-                 Tours = Tours.Where(x => x.Location == city || x.Date == date || x.TypeTour == type).ToList();
-                }*/
-                Tours = Tours.Where(x => x.Location==(city ?? x.Location)
-                && x.TypeTour == (type ?? x.TypeTour)
-                && x.Date==(date ?? x.Date)).ToList();
-                if (Tours.Count != 0)
-                {
-                   await Navigation.PushAsync(new SearchTourPage(Tours));
+                catch
+                {    
                 }
-                if (Tours.Count == 0)
+
+                try
                 {
-                    await DisplayAlert("Уведомление","Поиск не дал результатов. Попробуйте поискать по другим параматерам","Ок");
+                    string type = typeP.Items[typeP.SelectedIndex];
+                    if (type != null)
+                    {
+                        Tours = Tours.Where(x => x.TypeTour == type).ToList();
+                        await Navigation.PushAsync(new SearchTourPage(Tours));
+                        typeP.SelectedIndex = -1;
+                        cityP.SelectedIndex = -1;
+                    }
+                    if (Tours.Count == 0)
+                    {
+                        await DisplayAlert("Уведомление", "Поиск не дал результатов. Попробуйте поискать по другим параматерам", "Ок");
+                    }
+                }
+                catch
+                {
+                }
+                try
+                {
+                    string city = cityP.Items[cityP.SelectedIndex];
+                    string type = typeP.Items[typeP.SelectedIndex];
+
+                    if (city != null && type != null)
+                    {
+                        Tours = Tours.Where(x => x.TypeTour == type && x.Location == city).ToList();
+                        await Navigation.PushAsync(new SearchTourPage(Tours));
+                        typeP.SelectedIndex = -1;
+                        cityP.SelectedIndex = -1;
+                    }
+                    if (Tours.Count == 0)
+                    {
+                        await DisplayAlert("Уведомление", "Поиск не дал результатов. Попробуйте поискать по другим параматерам", "Ок");
+                    }
+                }
+                catch
+                {
+                    
                 }
             }
             catch
             {
-               await Navigation.PushAsync(new MainPage());
+                await DisplayAlert("Уведомление", "Поиск не дал результатов. Попробуйте поискать по другим параматерам", "Ок");
             }
-
         }
         private async void LoadData()
         {
@@ -104,7 +129,7 @@ namespace SmolenskTravel.Views
         {
             return true;
         }
-        private  void buttonSearchTours_Clicked(object sender, EventArgs e)
+        private void buttonSearchTours_Clicked(object sender, EventArgs e)
         {
             SelectedTour();
         }

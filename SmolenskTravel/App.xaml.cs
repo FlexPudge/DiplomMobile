@@ -15,6 +15,8 @@ namespace SmolenskTravel
 
         public static int IDCLient;
 
+        public static Client Client;
+
 
 
         public App()

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Заявка на бронирование"
+             x:Class="SmolenskTravel.Views.BookingPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10">
+            <Label Text="ФИО" FontSize="Body" VerticalTextAlignment="Center"/>
+            <Entry TextColor="Black" FontSize="Body" Text="{Binding Client.Fio}" />
+
+            <Label Text="Телефон" FontSize="Body" VerticalTextAlignment="Center"/>
+            <Entry TextColor="Black" FontSize="Body" Text="{Binding Client.Phone}"/>
+
+            <Label Text="Электронная почта" FontSize="Body" VerticalTextAlignment="Center"/>
+            <Entry TextColor="Black" FontSize="Body" Text="{Binding Client.Email}"/>
+
+            <Label Text="Количество человек" FontSize="Body" VerticalTextAlignment="Center"/>
+            <Entry x:Name="HumanAmount" TextColor="Black" FontSize="Body"/>
+
+            <Label Text="Выбранный тур" FontSize="Body" VerticalTextAlignment="Center"/>
+            <Entry TextColor="Black" FontSize="Body" Text="{Binding Tour.Title}"/>
+
+            <Label Text="Комментарий" FontSize="Body" VerticalTextAlignment="Center"/>
+            <Entry TextColor="Black" FontSize="Body"/>
+
+            <Button Text="Забронировать" WidthRequest="200" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

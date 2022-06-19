@@ -12,7 +12,6 @@ namespace SmolenskTravel.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OrdersPage : ContentPage
     {
-
         private List<Voucher> vouchers;
         public List<Voucher> Vouchers
         {
@@ -23,35 +22,27 @@ namespace SmolenskTravel.Views
                 OnPropertyChanged();
             }
         }
-
-        public  OrdersPage()
+        public OrdersPage()
         {
             InitializeComponent();
             this.BindingContext = this;
             Sort();
         }
-
         private async void Sort()
         {
             await LoadData();
             var id = App.IDCLient;
-            Vouchers = Vouchers.Where(x => x.Idclients == id && x.DateSale <= DateTime.Now).ToList();
+            Vouchers = Vouchers.Where(x => x.Idclients == id && x.Status == 1).ToList();
         }
         private async Task LoadData()
         {
-           var a =  await HttpRequest.GetListAsync<Voucher>(App.AddressHome+ "Home/Voucher");
-           Vouchers = a;
+            var a = await HttpRequest.GetListAsync<Voucher>(App.AddressHome + "Home/Voucher");
+            Vouchers = a;
         }
-       
-
-        private void DeleteButton_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-
-        }
-
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-
+            var content = ((Button)sender).BindingContext;
+            await Navigation.PushAsync(new DetailsOrderPage(content));
         }
     }
 }

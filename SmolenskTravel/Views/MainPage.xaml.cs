@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Rg.Plugins.Popup.Services;
 using SmolenskTravel.ToolKit;
 using System;
 using System.Collections.Generic;
@@ -18,14 +19,14 @@ namespace SmolenskTravel.Views
     public partial class MainPage : ContentPage
     {
         private List<Tour> tours;
-        public List<Tour> Tours 
-        { 
+        public List<Tour> Tours
+        {
             get => tours;
             set
-            { 
+            {
                 tours = value;
-                OnPropertyChanged(); 
-            } 
+                OnPropertyChanged();
+            }
         }
         private List<Tour> alltours;
         public List<Tour> AllTours
@@ -37,8 +38,11 @@ namespace SmolenskTravel.Views
                 OnPropertyChanged();
             }
         }
+        private Tour tour;
+        public Tour Tour { get => tour; set { tour = value;OnPropertyChanged(); } }
+
         private int selectedSort;
-        public int SelectedSort 
+        public int SelectedSort
         {
             get => selectedSort;
             set
@@ -48,36 +52,11 @@ namespace SmolenskTravel.Views
                 Sort();
             }
         }
-        private int _selectedSFilter;
-        public int SelectedFilter 
-        { 
-            get => _selectedSFilter;
-            set 
-            {
-                _selectedSFilter = value;
-               // Filter();
-            }
-        }
         public MainPage()
         {
             InitializeComponent();
             this.BindingContext = this;
             Tours = AllTours;
-        }
-        private void Sort()
-        {
-            if (SelectedSort == 0)
-            {
-                LoadData();
-            }
-            if (SelectedSort == 1)
-            {
-                AllTours = AllTours.OrderBy(x=>x.Price).ToList();
-            }
-            if (SelectedSort == 2)
-            {
-                AllTours = AllTours.OrderBy(x=>x.Price).ToList();
-            } 
         }
         private async void LoadData()
         {
@@ -87,11 +66,35 @@ namespace SmolenskTravel.Views
                 var client = new HttpClient(clientHandler);
                 var response = await client.GetAsync(App.AddressHome + "Home/Tour");
                 var content = await response.Content.ReadAsStringAsync();
-                AllTours = JsonConvert.DeserializeObject<List<Tour>>(content);               
+                AllTours = JsonConvert.DeserializeObject<List<Tour>>(content);
             }
-            catch 
+            catch
             {
                 await DisplayAlert("Ошибка", "Сервер не отвечает", "Ок");
+            }
+        }
+        private void Sort()
+        {
+            Tours = AllTours;
+            if (SelectedSort == 0)
+            {
+                LoadData();
+            }
+            if (SelectedSort == 1)
+            {
+                AllTours = AllTours.OrderBy(x => x.Price).ToList();
+            }
+            if (SelectedSort == 2)
+            {
+                AllTours = AllTours.OrderByDescending(x => x.Price).ToList();
+            }
+            if (SelectedSort == 3)
+            {
+                AllTours = AllTours.OrderBy(x => x.Duration).ToList();
+            }
+            if (SelectedSort == 4)
+            {
+                AllTours = AllTours.OrderByDescending(x => x.Duration).ToList();
             }
         }
         private bool Cerf(HttpRequestMessage arg1, X509Certificate2 arg2, X509Chain arg3, SslPolicyErrors arg4)
@@ -100,25 +103,9 @@ namespace SmolenskTravel.Views
         }
         private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-                var content = ((Button)sender).BindingContext as Tour;
-                var idClient = App.IDCLient;
-                var voucher = new Voucher
-                {
-                    Idclients = idClient,
-                    Idtours = content.Id,
-                    DateSale = DateTime.Now
-                };
-               var a = await HttpRequest.PostAsync<Voucher>(App.AddressHome + "Home/AddVoucher",voucher);
-            if (a.StatusCode == System.Net.HttpStatusCode.NoContent)
-            {
-                await DisplayAlert("Ошибка","Перед тем как забронировать тур авторизируйтесь","Ок");
-            }
-            else if (a.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                await DisplayAlert("Уведомление", "Вы забронировали тур, посмотреть информацию можно в профиле в разделе заказы!", "Ок");
-            }
+            var content = ((Button)sender).BindingContext as Tour;
+            await Navigation.PushAsync(new BookingPage(content));
         }
-
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Tour selectedTour = e.SelectedItem as Tour;

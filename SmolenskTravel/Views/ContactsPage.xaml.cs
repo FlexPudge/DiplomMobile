@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace SmolenskTravel.Views
@@ -48,9 +49,15 @@ namespace SmolenskTravel.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            //var url = Android.Net.Uri.Parse("tel:+79088888888");
-            //var inet = new Intent(Intent.ActionCall, url);
-            //StartActivity(intent);
+            string phoneNumber = "8 (4812) 70-15-60";
+            try
+            {
+                PhoneDialer.Open(phoneNumber);
+            }
+            catch (Exception)
+            {
+                DisplayAlert("Ошибка", "Произошла непредвиденная ошибка, извините, мы пытаемся устранить эту ошибку", "Ок");
+            }
         }
     }
 }

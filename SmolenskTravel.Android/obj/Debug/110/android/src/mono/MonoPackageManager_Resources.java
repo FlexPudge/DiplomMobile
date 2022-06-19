@@ -5,6 +5,7 @@ public class MonoPackageManager_Resources {
 		"RofloBulumbula.Android.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
+		"Rg.Plugins.Popup.dll",
 		"SmolenskTravel.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",

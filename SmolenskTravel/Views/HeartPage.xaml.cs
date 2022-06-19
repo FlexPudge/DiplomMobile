@@ -31,10 +31,19 @@ namespace SmolenskTravel.Views
         {
             InitializeComponent();
             this.BindingContext = this;
-            lvFavorite.RefreshCommand = new Command(() => {   
-                RefreshData();
-                lvFavorite.IsRefreshing = false;
-            });
+            if (App.IDCLient != 0)
+            {
+                lvFavorite.IsVisible = true;
+                lvFavorite.RefreshCommand = new Command(() =>
+                {
+                    RefreshData();
+                    lvFavorite.IsRefreshing = false;
+                });
+            }
+            else
+            {
+                lvFavorite.IsVisible = false;
+            }
         }
         public async void RefreshData()
         {

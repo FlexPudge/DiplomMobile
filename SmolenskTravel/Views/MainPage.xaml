@@ -10,32 +10,28 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition  Height="auto"/>
             <RowDefinition  Height="auto"/>
         </Grid.RowDefinitions>
-       
-        <Grid Grid.Row="0" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition  Width="auto"/>
-                <ColumnDefinition  Width="auto"/>
-            </Grid.ColumnDefinitions>
 
+        <Grid Grid.Row="0" >
             <StackLayout>
-                <Picker  x:Name="picker" WidthRequest="150" Title="Сортировка" SelectedIndex="{Binding SelectedSort}">
+                <Picker  x:Name="picker" WidthRequest="150" Title="Цена" SelectedIndex="{Binding SelectedSort}">
                     <Picker.Items>
                         <x:String>Все</x:String>
-                        <x:String>По возрастанию</x:String>
-                        <x:String>По убыванию</x:String>
+                        <x:String>Цена по возрастанию</x:String>
+                        <x:String>Цена по убыванию</x:String>
+                        <x:String>Продолжительность по возрастанию</x:String>
+                        <x:String>Продолжительность по убыванию</x:String>
                     </Picker.Items>
                 </Picker>
             </StackLayout>
         </Grid>
-
+        
         <ListView Grid.Row="1" Margin="15" ItemsSource="{Binding AllTours}"
                       ItemSelected="ListView_ItemSelected"
                       VerticalOptions="FillAndExpand"

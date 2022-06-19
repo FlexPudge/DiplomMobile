@@ -49,7 +49,7 @@ namespace SmolenskTravel.Views
         }
         private async void SignInButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SignInPage() );
+            await Navigation.PushAsync(new SignInPage());
         }
         private async void SignUpButton_Clicked(object sender, EventArgs e)
         {
@@ -69,5 +69,7 @@ namespace SmolenskTravel.Views
         {
             await Navigation.PushAsync(new DocumentsPage(Client));
         }
+
+        
     }
 }

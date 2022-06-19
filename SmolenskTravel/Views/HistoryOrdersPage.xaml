@@ -1,12 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmolenskTravel.Views.HistoryOrdersPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+               xmlns:converters="clr-namespace:SmolenskTravel.ToolKit"
+             x:Class="SmolenskTravel.Views.HistoryOrdersPage"
+             Title="История заказов">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ListView Grid.Row="1" Margin="15" x:Name="lvOrders" ItemsSource="{Binding Vouchers}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Padding="10" >
+                        <Label  TextColor="Black" FontAttributes="Bold"
+                               FontSize="20" HorizontalTextAlignment="Center" >
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}Детали по заказу №{0}">
+                                    <Binding Path="NumberOrders" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+
+                        <Image Source="{Binding IdtoursNavigation.Image, Converter={StaticResource ByteArrayToImage}}" 
+                               IsEnabled="False"
+                                   Aspect="AspectFill"
+                                   HeightRequest="200"/>
+                        <Label Text="{Binding IdtoursNavigation.Title}" TextColor="Black" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" />
+                        <Label  TextColor="Black" 
+                               FontSize="20" HorizontalTextAlignment="Center" >
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}Дата бронирования {0:dd.MM.yyyy}">
+                                    <Binding Path="DateSale" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                        <Button Text="Детали заказа" BackgroundColor="Transparent" TextColor="Black" Clicked="Button_Clicked" FontSize="Body" />
+                        <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
+                      Y2="20" StrokeLineCap="Round" Stroke="black"
+                      StrokeThickness="2" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

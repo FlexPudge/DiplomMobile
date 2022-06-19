@@ -34,7 +34,6 @@ C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\Sm
 C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\SmolenskTravel.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\MenuPage.xaml.g.cs
-C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\Views\AboutHeartPage.xaml.g.cs
 C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\Views\AboutTourPage.xaml.g.cs
 C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\Views\ContactsPage.xaml.g.cs
 C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\Views\DocumentsPage.xaml.g.cs
@@ -55,3 +54,5 @@ C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\Xa
 C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\SmolenskTravel.dll
 C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\ref\SmolenskTravel.dll
 C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\SmolenskTravel.pdb
+C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\Views\BookingPage.xaml.g.cs
+C:\Users\Misha\Desktop\SmolenskTravel\SmolenskTravel\obj\Debug\netstandard2.0\Views\DetailsOrderPage.xaml.g.cs

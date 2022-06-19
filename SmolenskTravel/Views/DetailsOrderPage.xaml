@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmolenskTravel.Views.DetailsOrderPage"
+             Title="Детали по заказу">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10">
+            <Label  FontSize="18" HorizontalOptions="CenterAndExpand">
+                <Label.Text>
+                    <MultiBinding StringFormat="{}Детали по заказу №{0}">
+                        <Binding Path="Contents.NumberOrders" />
+                    </MultiBinding>
+                </Label.Text>
+            </Label>
+            <Label Text="ФИО" FontSize="18" VerticalTextAlignment="Center"/>
+            <Label TextColor="Black" FontSize="18" Text="{Binding Client.Fio}" />
+
+            <Label Text="Телефон" FontSize="18" VerticalTextAlignment="Center"/>
+            <Label TextColor="Black" FontSize="18" Text="{Binding Client.Phone}"/>
+
+            <Label Text="Электронная почта" FontSize="18" VerticalTextAlignment="Center"/>
+            <Label TextColor="Black" FontSize="18" Text="{Binding Client.Email}"/>
+
+            <Label Text="Количество человек" FontSize="18" VerticalTextAlignment="Center"/>
+            <Label x:Name="HumanAmount" Text="{Binding Contents.Amount}" TextColor="Black" FontSize="18"/>
+
+            <Label Text="Выбранный тур" FontSize="18" VerticalTextAlignment="Center"/>
+            <Label TextColor="Black" FontSize="18" Text="{Binding Contents.IdtoursNavigation.Title}"/>
+
+            <Label Text="Комментарий" FontSize="18" VerticalTextAlignment="Center"/>
+            <Label TextColor="Black" FontSize="18" Text="{Binding Contents.Comment}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

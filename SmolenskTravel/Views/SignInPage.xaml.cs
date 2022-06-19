@@ -54,24 +54,26 @@ namespace SmolenskTravel.Views
         bool check = true;
         private async void TrySignIn()
         {
-           try
-           {
+            try
+            {
                 var clientHandler = new HttpClientHandler { ServerCertificateCustomValidationCallback = Cerf };
                 var client = new HttpClient(clientHandler);
                 var response = await client.GetAsync(App.AddressHome + $"Home/Login.login={LoginTextBox.Text}.password={PasswordTextBox.Text}");
                 if (response != null)
-                { 
+                {
                     var content = await response.Content.ReadAsStringAsync();
-                Client datalist = JsonConvert.DeserializeObject<Client>(content);
-                App.Auth = check;
-                App.IDCLient = datalist.Id;
+                    Client datalist = JsonConvert.DeserializeObject<Client>(content);
+                    App.Auth = check;
+                    App.IDCLient = datalist.Id;
+                    App.Client = datalist;
+                    // await Navigation.PushModalAsync(new ProfilePage(datalist)); открывает окно убирая боттом меню и тоол бар
                     await Navigation.PushAsync(new ProfilePage(datalist));
-               }
-           }
-           catch
-           {
-              await  DisplayAlert("Ошибка","Неправильно введен логин или пароль","Ок");
-           }
+                }
+            }
+            catch
+            {
+                await DisplayAlert("Ошибка", "Неправильно введен логин или пароль", "Ок");
+            }
         }
         private bool Cerf(HttpRequestMessage arg1, X509Certificate2 arg2, X509Chain arg3, SslPolicyErrors arg4)
         {

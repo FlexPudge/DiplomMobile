@@ -16,52 +16,24 @@ namespace SmolenskTravel.Views
     public partial class AboutTourPage : ContentPage
     {
         private Tour tour;
-        public Tour Tours { get=> tour; set { tour = value; OnPropertyChanged(); } }
+        public Tour Tours { get => tour; set { tour = value; OnPropertyChanged(); } }
 
         private List<AboutPhoto> aboutPhotos;
         public List<AboutPhoto> AboutPhotos { get => aboutPhotos; set { aboutPhotos = value; OnPropertyChanged(); } }
 
-
         private string lvl;
-        public string Lvl { get => lvl;set { lvl = value;OnPropertyChanged();  } }
-
+        public string Lvl { get => lvl; set { lvl = value; OnPropertyChanged(); } }
         public AboutTourPage()
         {
             InitializeComponent();
             this.BindingContext = this;
         }
-
         public AboutTourPage(Tour selectedTour)
         {
             InitializeComponent();
             this.BindingContext = this;
             Tours = selectedTour;
-            ComplextySwitch();
             LoadPhoto();
-        }
-
-        private  void ComplextySwitch()
-        {
-            /*switch (Tours.Complexity)
-            {
-                case 1:
-                    var a = "Базовый";
-                    lvlLabel.Text = $"Уровень физ. подготовки {a}";
-                    return;
-                case 2:
-                    var b = "Средний";
-                    lvlLabel.Text = $"Уровень физ. подготовки {b}";
-                    return;
-                case 3:
-                    var c = "Продвинутый";
-                    lvlLabel.Text = $"Уровень физ. подготовки {c}";
-                    return;
-                case 4:
-                    var d = "Сложный";
-                    lvlLabel.Text = $"Уровень физ. подготовки {d}";
-                    return;
-
-            }*/
         }
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
@@ -70,7 +42,7 @@ namespace SmolenskTravel.Views
                 var idClient = App.IDCLient;
                 var favorite = new Favorite
                 {
-                    Idclient=idClient,
+                    Idclient = idClient,
                     Idtours = Tours.Id
 
                 };
@@ -83,15 +55,13 @@ namespace SmolenskTravel.Views
             }
             catch
             {
-                await DisplayAlert("Недоступно", "Перед тем как добавить тур в избранное авторизируйтесь в системе, пожалуйста", "Ок");
+                await DisplayAlert("Недоступно", "Перед тем как добавить тур в избранное, авторизируйтесь в системе, пожалуйста", "Ок");
             }
         }
 
         private async void LoadPhoto()
         {
             int id = Tours.Id;
-            //var resp = await HttpRequest.GetAsync<AboutPhoto>(App.AddressHome + $"Home/LoadAboutPhoto.id={id}");
-           // AboutPhotos = JsonConvert.DeserializeObject<List<AboutPhoto>>(resp.Photo);
             try
             {
                 var clientHandler = new HttpClientHandler { ServerCertificateCustomValidationCallback = (ao, f, s, a) => true };
@@ -105,7 +75,6 @@ namespace SmolenskTravel.Views
                 await DisplayAlert("Ошибка", "Сервер не отвечает", "Ок");
             }
         }
-
         private async void AboutButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MoreTourPage(Tours));
@@ -113,7 +82,6 @@ namespace SmolenskTravel.Views
 
         private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-            //var content = ((Button)sender).BindingContext as Tour;
             var idClient = App.IDCLient;
             var voucher = new Voucher
             {
