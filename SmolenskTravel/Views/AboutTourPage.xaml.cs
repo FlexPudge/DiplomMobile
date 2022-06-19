@@ -82,22 +82,7 @@ namespace SmolenskTravel.Views
 
         private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-            var idClient = App.IDCLient;
-            var voucher = new Voucher
-            {
-                Idclients = idClient,
-                Idtours = Tours.Id,
-                DateSale = DateTime.Now
-            };
-            var a = await HttpRequest.PostAsync<Voucher>(App.AddressHome + "Home/AddVoucher", voucher);
-            if (a.StatusCode == System.Net.HttpStatusCode.NoContent)
-            {
-                await DisplayAlert("Ошибка", "Перед тем как купить тур авторизируйтесь", "Ок");
-            }
-            else if (a.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                await DisplayAlert("Уведомление", "Вы купили, посмотреть информацию о покупке можно в профиле!", "Ок");
-            }
+            await Navigation.PushAsync(new BookingPage(Tours));
         }
     }
 }

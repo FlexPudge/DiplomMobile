@@ -76,60 +76,33 @@ namespace SmolenskTravel.Views
         }
         private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                var content = ((Button)sender).BindingContext as Tour;
-                var idClient = App.IDCLient;
-                var voucher = new Voucher
-                {
-                    Idclients = idClient,
-                    Idtours = content.Id,
-                    DateSale = DateTime.Now
-                };
-                var a = await HttpRequest.PostAsync<Voucher>(App.AddressHome + "Home/AddVoucher", voucher);
-                if (a.IsSuccessStatusCode == true)
-                {
-                    await DisplayAlert("Уведомление", "Вы забронировали тур!", "Ок");
-                }
-            }
-            catch
-            {
-                await DisplayAlert("Недоступно", "Перед тем как забронировать тур авторизируйтесь в системе, пожалуйста", "Ок");
-            }
+            //try
+            //{
+            //    var content = ((Button)sender).BindingContext as Tour;
+            //    var idClient = App.IDCLient;
+            //    var voucher = new Voucher
+            //    {
+            //        Idclients = idClient,
+            //        Idtours = content.Id,
+            //        DateSale = DateTime.Now
+            //    };
+            //    var a = await HttpRequest.PostAsync<Voucher>(App.AddressHome + "Home/AddVoucher", voucher);
+            //    if (a.IsSuccessStatusCode == true)
+            //    {
+            //        await DisplayAlert("Уведомление", "Вы забронировали тур!", "Ок");
+            //    }
+            //}
+            //catch
+            //{
+            //    await DisplayAlert("Недоступно", "Перед тем как забронировать тур авторизируйтесь в системе, пожалуйста", "Ок");
+            //}
+            var content = ((Button)sender).BindingContext as Tour;
+            await Navigation.PushAsync(new BookingPage(content));
         }
         private async void ContentPage_Appearing(object sender, EventArgs e)
         {
             await Sort();
         }
-
-        private  void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            /*Favorite selectedFavoritetour = e.SelectedItem as Favorite;
-            if (selectedFavoritetour != null)
-            {
-                await Navigation.PushAsync(new AboutHeartPage(selectedFavoritetour));
-            }*/
-        }
-        private void OnMore(object sender, EventArgs e)
-        {
-            var mi = ((MenuItem)sender);
-            DisplayAlert("More Context Action", mi.CommandParameter + " more context action", "OK");
-        }
-
-        private void OnDelete(object sender, EventArgs e)
-        {
-            var mi = ((MenuItem)sender);
-            DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
-        }
-
-       /* private async void DeleteButton_Clicked(object sender, EventArgs e)
-        {
-            var content = ((Button)sender).BindingContext as Favorite;
-            //var deleteFavorit = Favorites.Find(x => x.Id == content.Id);
-            var resp = await HttpRequest.PostAsyncNotCode<Favorite>(App.AddressHome + "Home/DeleteFavorite", content);
-            Favorites = resp;
-        }*/
-
         private async void OnDeleteSwipeItemInvoked(object sender, EventArgs e)
         {
             var content = ((MenuItem)sender).BindingContext as Favorite;

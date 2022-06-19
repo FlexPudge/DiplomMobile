@@ -13,7 +13,6 @@
     </ContentPage.Resources>
 
     <ListView Grid.Row="1" Margin="15" x:Name="lvFavorite" ItemsSource="{Binding Favorites}"
-                      ItemSelected="ListView_ItemSelected"
                       VerticalOptions="FillAndExpand"
               IsPullToRefreshEnabled="True"
                       HasUnevenRows="True">

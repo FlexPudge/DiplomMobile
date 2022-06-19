@@ -17,17 +17,6 @@
             <RowDefinition  Height="auto"/>
             <RowDefinition  Height="auto"/>
         </Grid.RowDefinitions>
-
-        <Grid Grid.Row="0" >
-            <!--<Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition  Width="auto"/>
-                <ColumnDefinition  Width="auto"/>
-            </Grid.ColumnDefinitions>
-            <StackLayout  Margin="0,10,0,0">
-                <Picker x:Name="picker" WidthRequest="150"  />
-            </StackLayout>-->
-        </Grid>
         <ListView Grid.Row="1" Margin="15" ItemsSource="{Binding Tours}"     
                   ItemSelected="ListView_ItemSelected"
                       VerticalOptions="FillAndExpand"
