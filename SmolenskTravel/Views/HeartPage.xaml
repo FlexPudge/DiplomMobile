@@ -4,17 +4,17 @@
              xmlns:converters="clr-namespace:SmolenskTravel.ToolKit"
              x:Class="SmolenskTravel.Views.HeartPage"
              Title="Избранное"
-             Appearing="ContentPage_Appearing"
-             >
+             Appearing="ContentPage_Appearing">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ListView Grid.Row="1" Margin="15" x:Name="lvFavorite" ItemsSource="{Binding Favorites}"
+    <ScrollView>
+        <ListView Grid.Row="1" Margin="15" x:Name="lvFavorite" ItemsSource="{Binding Favorites}"
                       VerticalOptions="FillAndExpand"
-              IsPullToRefreshEnabled="True"
+                      IsPullToRefreshEnabled="True"
                       HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
@@ -58,4 +58,5 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+    </ScrollView>
 </ContentPage>

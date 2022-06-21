@@ -15,7 +15,7 @@
             <Entry TextColor="Black" FontSize="Body" Text="{Binding Client.Email}"/>
 
             <Label Text="Количество человек" FontSize="Body" VerticalTextAlignment="Center"/>
-            <Entry x:Name="HumanAmount" TextColor="Black" FontSize="Body"/>
+            <Entry x:Name="HumanAmount" Text="1" TextColor="Black" FontSize="Body"/>
 
             <Label Text="Выбранный тур" FontSize="Body" VerticalTextAlignment="Center"/>
             <Entry TextColor="Black" FontSize="Body" Text="{Binding Tour.Title}"/>

@@ -11,6 +11,7 @@
     </ContentPage.Resources>
 
     <ListView Grid.Row="1" Margin="15" x:Name="lvOrders" ItemsSource="{Binding Vouchers}"
+                      ItemSelected="lvOrders_ItemSelected"  
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True">
         <ListView.ItemTemplate>
@@ -30,7 +31,7 @@
                                IsEnabled="False"
                                    Aspect="AspectFill"
                                    HeightRequest="200"/>
-                        <Label Text="{Binding IdtoursNavigation.Title}" TextColor="Black" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" />
+                        <Label  Text="{Binding IdtoursNavigation.Title}" TextColor="Black" FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center" />
                         <Label  TextColor="Black" 
                                FontSize="20" HorizontalTextAlignment="Center" >
                             <Label.Text>
@@ -40,6 +41,7 @@
                             </Label.Text>
                         </Label>
                         <Button Text="Детали заказа" BackgroundColor="Transparent" TextColor="Black" Clicked="Button_Clicked" FontSize="Body" />
+                        <Button Text="Удалить" BackgroundColor="Transparent" TextColor="Black" Clicked="Button_Clicked_1" FontSize="Body" />
                         <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
                       Y2="20" StrokeLineCap="Round" Stroke="black"
                       StrokeThickness="2" />

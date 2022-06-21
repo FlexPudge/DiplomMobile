@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace SmolenskTravel.Views
@@ -12,6 +13,9 @@ namespace SmolenskTravel.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OrdersPage : ContentPage
     {
+        private Voucher voucher;
+        public Voucher Voucher { get => voucher; set { voucher = value; OnPropertyChanged(); } }
+
         private List<Voucher> vouchers;
         public List<Voucher> Vouchers
         {
@@ -26,15 +30,15 @@ namespace SmolenskTravel.Views
         {
             InitializeComponent();
             this.BindingContext = this;
+            LoadData();
             Sort();
         }
-        private async void Sort()
+        private void Sort()
         {
-            await LoadData();
             var id = App.IDCLient;
             Vouchers = Vouchers.Where(x => x.Idclients == id && x.Status == 1).ToList();
         }
-        private async Task LoadData()
+        private async void LoadData()
         {
             var a = await HttpRequest.GetListAsync<Voucher>(App.AddressHome + "Home/Voucher");
             Vouchers = a;
@@ -43,6 +47,31 @@ namespace SmolenskTravel.Views
         {
             var content = ((Button)sender).BindingContext;
             await Navigation.PushAsync(new DetailsOrderPage(content));
+        }
+        private async void lvOrders_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Voucher = e.SelectedItem as Voucher;
+            if (Voucher != null)
+            {
+                await Navigation.PushAsync(new AboutOrdersPage(Voucher));
+            }
+        }
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            try
+            {
+                var content = ((Button)sender).BindingContext as Voucher;
+                int id = content.Id;
+                var request = await HttpRequest.DeleteAsync<Voucher>(App.AddressHome + $"Home/DeleteVoucher.id={id}");
+                if (request != null)
+                {
+                    await DisplayAlert("Сообщение", "Бронировение снято", "ОК");
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Упс", ex.Message, "Ок");
+            }
         }
     }
 }

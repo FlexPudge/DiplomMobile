@@ -38,10 +38,6 @@ namespace SmolenskTravel.Views
 
         public void LoadLabelDays()
         {
-            if (Tours.IdprogrammTourNavigation.Day3 == null)
-            {
-              //  FrameDay3.IsVisible = false;
-            }
             if (Tours.IdprogrammTourNavigation.Day4 == null)
             {
                 FrameDay4.IsVisible = false;

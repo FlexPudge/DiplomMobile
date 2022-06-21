@@ -31,23 +31,29 @@ namespace SmolenskTravel.Views
         {
             InitializeComponent();
             this.BindingContext = this;
+            lvFavorite.SelectedItem = null;
+            CheckLoadList();
+        }
+        private void CheckLoadList()
+        {
             if (App.IDCLient != 0)
             {
-                lvFavorite.IsVisible = true;
+                //lvFavorite.IsVisible = true;
                 lvFavorite.RefreshCommand = new Command(() =>
                 {
                     RefreshData();
                     lvFavorite.IsRefreshing = false;
                 });
             }
-            else
+            if (App.IDCLient == 0)
             {
-                lvFavorite.IsVisible = false;
+                //lvFavorite.IsVisible = false;
             }
         }
+
         public async void RefreshData()
         {
-           await Sort();
+            await Sort();
         }
         private async Task Sort()
         {
@@ -65,7 +71,7 @@ namespace SmolenskTravel.Views
                 var content = await response.Content.ReadAsStringAsync();
                 Favorites = JsonConvert.DeserializeObject<List<Favorite>>(content);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 await DisplayAlert("Ошибка", e.Message, "Ок");
             }
@@ -76,28 +82,17 @@ namespace SmolenskTravel.Views
         }
         private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    var content = ((Button)sender).BindingContext as Tour;
-            //    var idClient = App.IDCLient;
-            //    var voucher = new Voucher
-            //    {
-            //        Idclients = idClient,
-            //        Idtours = content.Id,
-            //        DateSale = DateTime.Now
-            //    };
-            //    var a = await HttpRequest.PostAsync<Voucher>(App.AddressHome + "Home/AddVoucher", voucher);
-            //    if (a.IsSuccessStatusCode == true)
-            //    {
-            //        await DisplayAlert("Уведомление", "Вы забронировали тур!", "Ок");
-            //    }
-            //}
-            //catch
-            //{
-            //    await DisplayAlert("Недоступно", "Перед тем как забронировать тур авторизируйтесь в системе, пожалуйста", "Ок");
-            //}
-            var content = ((Button)sender).BindingContext as Tour;
-            await Navigation.PushAsync(new BookingPage(content));
+
+            if (App.IDCLient != 0)
+            {
+                var content = ((Button)sender).BindingContext as Tour;
+                await Navigation.PushAsync(new BookingPage(content));
+            }
+            if (App.IDCLient == 0)
+            {
+                await DisplayAlert("Уведомление", "Авторизируйтесь в системе", "Ок");
+            }
+
         }
         private async void ContentPage_Appearing(object sender, EventArgs e)
         {

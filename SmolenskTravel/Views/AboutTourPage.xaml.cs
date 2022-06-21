@@ -61,6 +61,7 @@ namespace SmolenskTravel.Views
 
         private async void LoadPhoto()
         {
+
             int id = Tours.Id;
             try
             {
@@ -82,7 +83,15 @@ namespace SmolenskTravel.Views
 
         private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BookingPage(Tours));
+            if (App.IDCLient != 0)
+            {
+                await Navigation.PushAsync(new BookingPage(Tours));
+            }
+            if (App.IDCLient == 0)
+            {
+                await DisplayAlert("Уведомление", "Авторизируйтесь в системе", "Ок");
+            }
+
         }
     }
 }

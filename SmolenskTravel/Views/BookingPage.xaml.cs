@@ -33,6 +33,10 @@ namespace SmolenskTravel.Views
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            if (HumanAmount.Text == null)
+            {
+                await DisplayAlert("Ошибка", "Заполните поле - количество человек", "Ок");
+            }
             Random rnd = new Random();
             int randomNumberOrders = rnd.Next(999,10000);
             var idClient = App.IDCLient;

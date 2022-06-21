@@ -39,7 +39,7 @@ namespace SmolenskTravel.Views
             }
         }
         private Tour tour;
-        public Tour Tour { get => tour; set { tour = value;OnPropertyChanged(); } }
+        public Tour Tour { get => tour; set { tour = value; OnPropertyChanged(); } }
 
         private int selectedSort;
         public int SelectedSort
@@ -103,8 +103,15 @@ namespace SmolenskTravel.Views
         }
         private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-            var content = ((Button)sender).BindingContext as Tour;
-            await Navigation.PushAsync(new BookingPage(content));
+            if (App.IDCLient != 0)
+            {
+                var content = ((Button)sender).BindingContext as Tour;
+                await Navigation.PushAsync(new BookingPage(content));
+            }
+            if (App.IDCLient == 0)
+            {
+                await DisplayAlert("Уведомление", "Авторизируйтесь в системе", "Ок");
+            }
         }
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
