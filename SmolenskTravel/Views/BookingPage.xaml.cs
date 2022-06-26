@@ -33,9 +33,34 @@ namespace SmolenskTravel.Views
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(FIO.Text) || FIO.Text == "0")
+            {
+                await DisplayAlert("Ошибка", "Заполните поле - ФИО", "Ок");
+                return;
+            }
+            if (string.IsNullOrEmpty(Phone.Text) || Phone.Text == "0")
+            {
+                await DisplayAlert("Ошибка", "Заполните поле - Номер телефона", "Ок");
+                return;
+            }
+            if (string.IsNullOrEmpty(Email.Text) || Email.Text == "0")
+            {
+                await DisplayAlert("Ошибка", "Заполните поле - Email", "Ок");
+                return;
+            }
             if (string.IsNullOrEmpty(HumanAmount.Text) || HumanAmount.Text == "0")
             {
                 await DisplayAlert("Ошибка", "Заполните поле - количество человек", "Ок");
+                return;
+            }
+            if (string.IsNullOrEmpty(SelTour.Text) || SelTour.Text == "0")
+            {
+                await DisplayAlert("Ошибка", "Заполните поле - Выбранный тур", "Ок");
+                return;
+            }
+            if (string.IsNullOrEmpty(Comment.Text) || Comment.Text == "0")
+            {
+                await DisplayAlert("Ошибка", "Заполните поле - Комментарий", "Ок");
                 return;
             }
             Random rnd = new Random();

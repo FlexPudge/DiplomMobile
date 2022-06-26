@@ -6,22 +6,22 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="10">
             <Label Text="ФИО" FontSize="Body" VerticalTextAlignment="Center"/>
-            <Entry TextColor="Black" FontSize="Body" Text="{Binding Client.Fio}" />
+            <Entry x:Name="FIO" TextColor="Black" FontSize="Body" Text="{Binding Client.Fio}" />
 
             <Label Text="Телефон" FontSize="Body" VerticalTextAlignment="Center"/>
-            <Entry TextColor="Black" FontSize="Body" Text="{Binding Client.Phone}"/>
+            <Entry x:Name="Phone" TextColor="Black" FontSize="Body" Text="{Binding Client.Phone}"/>
 
             <Label Text="Электронная почта" FontSize="Body" VerticalTextAlignment="Center"/>
-            <Entry TextColor="Black" FontSize="Body" Text="{Binding Client.Email}"/>
+            <Entry x:Name="Email" TextColor="Black" FontSize="Body" Text="{Binding Client.Email}"/>
 
             <Label Text="Количество человек" FontSize="Body" VerticalTextAlignment="Center"/>
             <Entry x:Name="HumanAmount" Text="1" TextColor="Black" FontSize="Body"/>
 
             <Label Text="Выбранный тур" FontSize="Body" VerticalTextAlignment="Center"/>
-            <Entry TextColor="Black" FontSize="Body" Text="{Binding Tour.Title}"/>
+            <Entry x:Name="SelTour" TextColor="Black" FontSize="Body" Text="{Binding Tour.Title}"/>
 
             <Label Text="Комментарий" FontSize="Body" VerticalTextAlignment="Center"/>
-            <Entry TextColor="Black" FontSize="Body"/>
+            <Entry x:Name="Comment" TextColor="Black" FontSize="Body"/>
 
             <Button Text="Забронировать" WidthRequest="200" Clicked="Button_Clicked"/>
         </StackLayout>
