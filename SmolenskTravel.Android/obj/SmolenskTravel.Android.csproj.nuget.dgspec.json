@@ -1,26 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj": {}
+    "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj": {
+    "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj",
-        "projectName": "SmolenskTravel.Android",
-        "projectPath": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj",
-        "packagesPath": "C:\\Users\\Misha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel.Android\\obj\\",
+        "projectUniqueName": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj",
+        "projectName": "RofloBulumbula.Android",
+        "projectPath": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj",
+        "packagesPath": "C:\\Users\\FlexPudge\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Misha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\FlexPudge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "monoandroid11.0"
@@ -32,8 +28,8 @@
         "frameworks": {
           "monoandroid11.0": {
             "projectReferences": {
-              "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj": {
-                "projectPath": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj"
+              "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj": {
+                "projectPath": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj"
               }
             }
           }
@@ -54,22 +50,18 @@
         }
       }
     },
-    "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj": {
+    "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj",
+        "projectUniqueName": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj",
         "projectName": "SmolenskTravel",
-        "projectPath": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj",
-        "packagesPath": "C:\\Users\\Misha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel\\obj\\",
+        "projectPath": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj",
+        "packagesPath": "C:\\Users\\FlexPudge\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Misha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\FlexPudge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -127,7 +119,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

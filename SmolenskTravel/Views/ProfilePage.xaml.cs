@@ -70,6 +70,5 @@ namespace SmolenskTravel.Views
             await Navigation.PushAsync(new DocumentsPage(Client));
         }
 
-        
     }
 }

@@ -33,6 +33,7 @@
                 <Label Text="{Binding Tours.Location}" TextColor="Black" FontSize="18" 
                    HorizontalOptions="CenterAndExpand"
                    Margin="10"/>
+                
                 <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"
                       Y2="20" StrokeLineCap="Round" Stroke="black"
                       StrokeThickness="2" />

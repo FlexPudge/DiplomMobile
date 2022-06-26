@@ -15,9 +15,10 @@
 
             <Frame Grid.Row="1" BorderColor="Black" CornerRadius="10" Padding="10"  >
                 <StackLayout>
-                    <Label Text="Город" Margin="30,0" FontSize="20"
+                    <Label Text="Город/Регион/Область" Margin="30,0" FontSize="20"
                            TextColor="Black"/>
-                    <Picker x:Name="cityP" Title="Регионы" ItemsSource="{Binding AllTours}" ItemDisplayBinding="{Binding Location}"/>
+                    <Picker x:Name="cityP"
+                            Title="Город/Регион/Область" ItemsSource="{Binding AllTours}" ItemDisplayBinding="{Binding Location}"/>
                     <Label Text="Тип тура" Margin="30,0" FontSize="20"
                            TextColor="Black"/>
                     <Picker x:Name="typeP" Title="Виды отдыха" ItemsSource="{Binding AllTours}" ItemDisplayBinding="{Binding TypeTour}"/>

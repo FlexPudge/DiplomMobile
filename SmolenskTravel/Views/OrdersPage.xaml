@@ -40,6 +40,14 @@
                                 </MultiBinding>
                             </Label.Text>
                         </Label>
+                        <Label  TextColor="Black" 
+                               FontSize="20" HorizontalTextAlignment="Center" >
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}Дата начала тура {0:dd.MM.yyyy}">
+                                    <Binding Path="IdtoursNavigation.Date" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
                         <Button Text="Детали заказа" BackgroundColor="Transparent" TextColor="Black" Clicked="Button_Clicked" FontSize="Body" />
                         <Button Text="Удалить" BackgroundColor="Transparent" TextColor="Black" Clicked="Button_Clicked_1" FontSize="Body" />
                         <Line X1="10"  Y1="20" X2="400" HorizontalOptions="CenterAndExpand"

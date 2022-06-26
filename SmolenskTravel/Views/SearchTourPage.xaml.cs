@@ -37,25 +37,24 @@ namespace SmolenskTravel.Views
 
         private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-            var content = ((Button)sender).BindingContext as Tour;
-            await Navigation.PushAsync(new BookingPage(content));
-        }
-
-        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
             if (App.IDCLient != 0)
             {
-                Tour selectedTour = e.SelectedItem as Tour;
-                if (selectedTour != null)
-                {
-                    await Navigation.PushAsync(new AboutTourPage(selectedTour));
-                }
+                var content = ((Button)sender).BindingContext as Tour;
+                await Navigation.PushAsync(new BookingPage(content));
             }
             if (App.IDCLient == 0)
             {
                 await DisplayAlert("Ошибка", "Авторизируйтесь в системе", "Ок");
             }
+        }
 
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Tour selectedTour = e.SelectedItem as Tour;
+            if (selectedTour != null)
+            {
+                await Navigation.PushAsync(new AboutTourPage(selectedTour));
+            }
         }
     }
 }

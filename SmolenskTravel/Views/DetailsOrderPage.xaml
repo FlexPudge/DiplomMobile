@@ -27,6 +27,13 @@
             <Label Text="Выбранный тур" FontSize="18" VerticalTextAlignment="Center"/>
             <Label TextColor="Black" FontSize="18" Text="{Binding Contents.IdtoursNavigation.Title}"/>
 
+            <Label Text="Стоимость тура"
+                   FontSize="18"
+                   VerticalTextAlignment="Center" />
+            <Label TextColor="Black"
+                   FontSize="18"
+                   Text="{Binding Contents.IdtoursNavigation.Price}" />
+
             <Label Text="Комментарий" FontSize="18" VerticalTextAlignment="Center"/>
             <Label TextColor="Black" FontSize="18" Text="{Binding Contents.Comment}"/>
         </StackLayout>

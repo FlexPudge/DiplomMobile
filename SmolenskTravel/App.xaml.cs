@@ -6,8 +6,11 @@ namespace SmolenskTravel
 {
     public partial class App : Application
     {
+        //public static string AddressHome => "https://169.254.74.101:5001/";
 
-        // public static string AddressHome => "https://169.254.74.121:5001/";
+
+
+
         public static string AddressHome => "https://192.168.1.45:5001/";
         public static string Tours => "Home/Tour";
 

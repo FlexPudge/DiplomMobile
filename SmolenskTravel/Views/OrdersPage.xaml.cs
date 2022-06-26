@@ -29,9 +29,8 @@ namespace SmolenskTravel.Views
         public OrdersPage()
         {
             InitializeComponent();
-            this.BindingContext = this;
             LoadData();
-            Sort();
+            this.BindingContext = this;
         }
         private void Sort()
         {
@@ -42,6 +41,7 @@ namespace SmolenskTravel.Views
         {
             var a = await HttpRequest.GetListAsync<Voucher>(App.AddressHome + "Home/Voucher");
             Vouchers = a;
+            Sort();
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {

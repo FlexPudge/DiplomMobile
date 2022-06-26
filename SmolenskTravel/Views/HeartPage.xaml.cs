@@ -27,39 +27,64 @@ namespace SmolenskTravel.Views
                 OnPropertyChanged();
             }
         }
+        private List<Favorite> newFavorites;
+        public List<Favorite> NewFavorites
+        {
+            get => newFavorites;
+            set
+            {
+                newFavorites = value;
+                OnPropertyChanged();
+            }
+        }
         public HeartPage()
         {
             InitializeComponent();
             this.BindingContext = this;
-            lvFavorite.SelectedItem = null;
             CheckLoadList();
+          
         }
         private void CheckLoadList()
         {
-            if (App.IDCLient != 0)
+            lvFavorite.RefreshCommand = new Command(() =>
             {
-                //lvFavorite.IsVisible = true;
-                lvFavorite.RefreshCommand = new Command(() =>
-                {
-                    RefreshData();
-                    lvFavorite.IsRefreshing = false;
-                });
-            }
-            if (App.IDCLient == 0)
-            {
-                //lvFavorite.IsVisible = false;
-            }
+                RefreshData();
+                lvFavorite.IsRefreshing = false;
+            });
         }
 
-        public async void RefreshData()
+        public void RefreshData()
         {
-            await Sort();
+          Sort();
         }
-        private async Task Sort()
+        private async void Sort()
         {
-            await LoadData();
-            var id = App.IDCLient;
-            Favorites = Favorites.Where(x => x.Idclient == id).ToList();
+            if (App.Client != null)
+            {
+                await LoadData();
+                var id = App.IDCLient;
+                //var list = Favorites.Select(f => f.Idtours).Distinct();
+                Favorites = Favorites.Where(x => x.Idclient == id).ToList();
+
+                //var ids = Favorites.Select(f => f.Idtours).Distinct();
+                //var list = new List<Favorite>();
+                //foreach (var i in ids)
+                //{
+
+                //    var fovaoritre = Favorites.FirstOrDefault(f => f.Idtours == id);
+                //    list.Add(fovaoritre);
+                //}
+                //Favorites = list.Where(x => x.Idclient == id).ToList();
+
+
+                //Favorites = Favorites.GroupBy(x => x.Idclient==id).Select(x => x.ToList());
+
+                //NewFavorites = NewFavorites.Where(x => x.Idclient == id).ToList();
+                //Favorites = NewFavorites.GroupBy(x => x.Idclient == id).Select(x=>x.First()).ToList();
+            }
+
+
+
         }
         private async Task LoadData()
         {
@@ -94,9 +119,9 @@ namespace SmolenskTravel.Views
             }
 
         }
-        private async void ContentPage_Appearing(object sender, EventArgs e)
+        private  void ContentPage_Appearing(object sender, EventArgs e)
         {
-            await Sort();
+             Sort();
         }
         private async void OnDeleteSwipeItemInvoked(object sender, EventArgs e)
         {

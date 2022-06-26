@@ -2240,26 +2240,21 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Misha\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\FlexPudge\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj",
-      "projectName": "SmolenskTravel.Android",
-      "projectPath": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj",
-      "packagesPath": "C:\\Users\\Misha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel.Android\\obj\\",
+      "projectUniqueName": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj",
+      "projectName": "RofloBulumbula.Android",
+      "projectPath": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.Android\\SmolenskTravel.Android.csproj",
+      "packagesPath": "C:\\Users\\FlexPudge\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Misha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\FlexPudge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "monoandroid11.0"
@@ -2271,8 +2266,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj": {
-              "projectPath": "C:\\Users\\Misha\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj"
+            "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj": {
+              "projectPath": "C:\\Users\\FlexPudge\\Desktop\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel\\SmolenskTravel.csproj"
             }
           }
         }
@@ -2298,7 +2293,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.7.3 на 1.6.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n SmolenskTravel.Android -> SmolenskTravel -> Xamarin.Essentials (>= 1.7.3) \r\n SmolenskTravel.Android -> Xamarin.Essentials (>= 1.6.1)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.7.3 на 1.6.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RofloBulumbula.Android -> SmolenskTravel -> Xamarin.Essentials (>= 1.7.3) \r\n RofloBulumbula.Android -> Xamarin.Essentials (>= 1.6.1)",
       "libraryId": "Xamarin.Essentials",
       "targetGraphs": [
         "MonoAndroid,Version=v11.0"
@@ -2308,7 +2303,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 5.0.0.2401 на 5.0.0.2012. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n SmolenskTravel.Android -> SmolenskTravel -> Xamarin.Forms (>= 5.0.0.2401) \r\n SmolenskTravel.Android -> Xamarin.Forms (>= 5.0.0.2012)",
+      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 5.0.0.2401 на 5.0.0.2012. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n RofloBulumbula.Android -> SmolenskTravel -> Xamarin.Forms (>= 5.0.0.2401) \r\n RofloBulumbula.Android -> Xamarin.Forms (>= 5.0.0.2012)",
       "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "MonoAndroid,Version=v11.0"
